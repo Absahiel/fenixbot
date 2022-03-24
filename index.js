@@ -66,7 +66,7 @@ const iniciar = async(auth) => {
                         const q = args.join(' ')
                         const soyYo = client.user.jid
                         const botNumber = client.user.jid.split('@')[0]
-                        const ownerNumber = ['595995660558', '595994230885']
+                        const ownerNumber = ['5955985902159']
                         const isGroup = from.endsWith('@g.us')
                         const sender = mek.key.fromMe ? client.user.jid : mek.participant
 			const senderNumber = sender.split('@')[0]
@@ -243,21 +243,7 @@ if ((isMedia && !mek.message.videoMessage || isQuotedImage) && args.length == 0)
 	reply(`Usa ${prefix + command} tageando un archivo media`)
 }
 break
-
-case 'tts':
-if (!q) return reply(`Usa ${prefix + command} <idioma> <texto>`)
-const gtts = require('./lib/gtts')(args[0])
-var dtt = body.slice(8)
-var ranm = '666.mp3'
-var rano = '666.ogg'
-dtt.length > 300
-? reply('Texto demaciado largo')
-: gtts.save(ranm, dtt, function() {
-client.sendMessage(from, fs.readFileSync(ranm), audio, {quoted: mek, mimetype: 'audio/mp4', ptt: true, contextInfo: {mentionedJid: [sender], externalAdReply: fakeBot}})
-fs.unlinkSync(ranm)
-})
-break
-
+		
 case 'play':
 if (!q) return reply(`Usa ${prefix + command} <text>`)
 var play = await yts(q)
@@ -276,16 +262,7 @@ var jids = []
 groupMembers.map(v => jids.push(v.jid))
 client.sendMessage(from, '', text, {contextInfo: {mentionedJid: jids}})
 break
-		
-	
-
-case 'orientacion':
-client.sendMessage(from, fs.readFileSync('./media/Orient.mp3'), audio, {quoted: mek, mimetype: 'audio/mp4', ptt: true, contextInfo: {mentionedJid: [sender], externalAdReply: titoBot}})
-break
-
-		
-		
-		
+			
              default:
 		if (isOwner) {
 			if (body.startsWith('>')){
