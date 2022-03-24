@@ -1,4 +1,4 @@
-const { WAConnection, MessageType, MimeType } = require('@adiwajshing/baileys@3.5.3')
+const { WAConnection, MessageType, MimeType } = require('@adiwajshing/baileys')
 const { exec } = require('child_process')
 const ffmpeg = require('fluent-ffmpeg')
 const fs = require('fs')
