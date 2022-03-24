@@ -324,4 +324,4 @@ break
         })
 }
 
-iniciar('./session.json')
+iniciar()
